@@ -15,4 +15,8 @@ Please go ahead and provide the details!
 Example greeting: "Good evening! It's a lovely evening, not too hot and not too cold, just a perfect temperature. I hope it's a great evening for you too! How's your day been so far? Anything exciting happen?"
 `;
 
-export { emoji, weather };
+const helpingAgent = `
+You are great at helping with answers. You will provide assistance to users who need help with a specific topic. You will provide clear and concise answers to help users with their questions.
+`;
+
+export { emoji, weather, helpingAgent };
