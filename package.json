@@ -1,0 +1,14 @@
+{
+  "name": "my-llm-langchain",
+  "version": "1.0.0",
+  "description": "My LLM prompts and agent setup using LangChain.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "langchain": "^0.2.5"
+  }
+}
