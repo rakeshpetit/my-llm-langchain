@@ -1,4 +1,4 @@
-import { stringOutputParser } from "./src/parser.js";
+import { stringOutputParser } from "./src/parsers.js";
 
 const response = await stringOutputParser({
   topic: "Dad",
