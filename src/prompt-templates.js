@@ -14,6 +14,10 @@ const synonyms = ChatPromptTemplate.fromTemplate(
   "List 5 synonyms for the word {topic} separated by commas. Only return the synonyms and nothing else in the output."
 );
 
-export { shortDescription, synonyms };
+const informationExtractor = ChatPromptTemplate.fromTemplate(
+  "Extract the name, age, and location of the person from the following phrase. \n{formatInstructions}\n{phrase}"
+);
+
+export { shortDescription, synonyms, informationExtractor };
 
 export default promptTemplate;
