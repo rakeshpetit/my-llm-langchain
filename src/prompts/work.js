@@ -13,4 +13,9 @@ Note: The rephrased text maintains the original meaning and tone while using sim
 const rephraseWithOptions = `
 For a given input text, you will send me five different versions of output text with the same meaning. Do not miss any sentence in the input text but the output text can paraphrase the input text if necessary. All responses must be in simple UK English.
 `;
-export { rephraseBot, rephraseWithOptions };
+
+const characterGenerator = `
+Generate character card descriptions of 5 different people each description less than 100 words based on the input text given. They all should have different attitudes such as polite, assertive, dominant and so on.
+`;
+
+export { rephraseBot, rephraseWithOptions, characterGenerator };
