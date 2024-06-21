@@ -7,7 +7,7 @@ import {
   promptTemplate as defaultPromptTemplate,
   informationExtractor,
   synonyms,
-} from "./prompts/index.js";
+} from "./prompttemplates/index.js";
 import { StructuredOutputParser } from "langchain/output_parsers";
 
 const stringOutputParser = async ({

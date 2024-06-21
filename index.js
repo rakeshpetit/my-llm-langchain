@@ -3,6 +3,8 @@ import {
   csvOutputParser,
   informationParser,
 } from "./src/parsers.js";
+import { promptArchitect } from "./src/prompts/index.js";
+import { generatePromptTemplate } from "./src/utils.js";
 
 // const response = await stringOutputParser({
 //   topic: "Dad",
@@ -12,8 +14,14 @@ import {
 //   topic: "sad",
 // });
 
-const response = await informationParser({
-  phrase: "My name is John. I am 25 years old. I live in New York.",
+// const response = await informationParser({
+//   phrase: "My name is John. I am 25 years old. I live in New York.",
+// });
+
+const promptTemplate = generatePromptTemplate(promptArchitect);
+const response = await stringOutputParser({
+  topic: "Cyber Security and Privacy officer",
+  promptTemplate,
 });
 
 console.log(response);
