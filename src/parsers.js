@@ -3,10 +3,11 @@ import {
   StringOutputParser,
 } from "@langchain/core/output_parsers";
 import defaultModel from "./models.js";
-import defaultPromptTemplate, {
+import {
+  promptTemplate as defaultPromptTemplate,
   informationExtractor,
   synonyms,
-} from "./prompt-templates.js";
+} from "./prompts/index.js";
 import { StructuredOutputParser } from "langchain/output_parsers";
 
 const stringOutputParser = async ({

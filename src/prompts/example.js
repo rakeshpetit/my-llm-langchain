@@ -18,6 +18,4 @@ const informationExtractor = ChatPromptTemplate.fromTemplate(
   "Extract the name, age, and location of the person from the following phrase. \n{formatInstructions}\n{phrase}"
 );
 
-export { shortDescription, synonyms, informationExtractor };
-
-export default promptTemplate;
+export { promptTemplate, shortDescription, synonyms, informationExtractor };
