@@ -1,9 +1,11 @@
-import { ChatOllama } from "@langchain/community/chat_models/ollama";
+import { StringOutputParser } from "@langchain/core/output_parsers";
+import ollamaLlm from "./src/models.js";
+import promptTemplate from "./src/prompt-templates.js";
 
-const ollamaLlm = new ChatOllama({
-  baseUrl: "http://localhost:11434",
-  model: "llama3:8b-instruct-q6_K",
+const chain = promptTemplate.pipe(ollamaLlm).pipe(new StringOutputParser());
+
+const response = await chain.invoke({
+  topic: "Who created you?",
 });
 
-const response = await ollamaLlm.invoke("Who created you?");
-console.log(response.content);
+console.log(response);

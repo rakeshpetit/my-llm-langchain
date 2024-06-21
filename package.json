@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@langchain/community": "^0.2.12",
+    "@langchain/core": "^0.2.8",
     "cheerio": "^1.0.0-rc.12",
     "langchain": "^0.2.5"
   },
