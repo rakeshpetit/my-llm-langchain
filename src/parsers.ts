@@ -2,7 +2,7 @@ import {
   CommaSeparatedListOutputParser,
   StringOutputParser,
 } from "@langchain/core/output_parsers";
-import defaultModel from "./models.js";
+import { openRouterLlm as defaultModel } from "./models.js";
 import {
   promptTemplate as defaultPromptTemplate,
   informationExtractor,
