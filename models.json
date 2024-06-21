@@ -1,0 +1,137 @@
+{
+  "codeModels": [
+    {
+      "apiBase": "https://openrouter.ai/api/v1",
+      "model": "deepseek/deepseek-coder",
+      "provider": "openai",
+      "title": "1.OpenRouter Deepseek Coder V2 Instruct 236B $0.28"
+    },
+    {
+      "apiBase": "https://openrouter.ai/api/v1",
+      "model": "qwen/qwen-2-72b-instruct",
+      "provider": "openai",
+      "title": "2.OpenRouter Qwen 2 72B Instruct $0.9"
+    },
+    {
+      "apiBase": "https://openrouter.ai/api/v1",
+      "model": "meta-llama/llama-3-70b-instruct",
+      "provider": "openai",
+      "title": "3.OpenRouter LLaMA3 70B Instruct $0.79"
+    },
+    {
+      "apiBase": "https://openrouter.ai/api/v1",
+      "model": "mistralai/mixtral-8x22b-instruct",
+      "provider": "openai",
+      "title": "4.OpenRouter Mixtral 8x22b $0.65"
+    }
+  ],
+  "codeModelsLocal": [
+    {
+      "model": "deepseek-coder-v2:16b-lite-instruct-q6_K",
+      "provider": "ollama",
+      "title": "1.Deepseek Coder V2 Instruct 16B"
+    },
+    {
+      "model": "codestral:latest",
+      "provider": "ollama",
+      "title": "1.Codestral"
+    },
+    {
+      "model": "codeqwen:7b-chat-v1.5-q5_1",
+      "provider": "ollama",
+      "title": "2.CodeQwen1.5-7B-Chat"
+    },
+    {
+      "model": "codeqwen:7b-code-v1.5-q5_1",
+      "provider": "ollama",
+      "title": "2.CodeQwen1.5-7B-Code"
+    },
+    {
+      "model": "deepseek-coder-1.3B-kexer-Q6_K:latest",
+      "provider": "ollama",
+      "title": "3.Deepseek Coder 1.3b q6_K"
+    }
+  ],
+  "fillCodeModels": [
+    {
+      "apiBase": "https://openrouter.ai/api/v1",
+      "model": "bigcode/starcoder2-15b-instruct",
+      "provider": "openai",
+      "title": "1.OpenRouter StarCoder2 15B Instruct $0.15"
+    }
+  ],
+  "generalModels": [
+    {
+      "apiBase": "https://openrouter.ai/api/v1",
+      "model": "qwen/qwen-2-72b-instruct",
+      "provider": "openai",
+      "title": "1.OpenRouter Qwen 2 72B Instruct $0.9"
+    },
+    {
+      "apiBase": "https://openrouter.ai/api/v1",
+      "model": "meta-llama/llama-3-70b-instruct",
+      "provider": "openai",
+      "title": "2.OpenRouter LLaMA3 70B Instruct $0.79"
+    },
+    {
+      "apiBase": "https://openrouter.ai/api/v1",
+      "model": "meta-llama/llama-3-8b-instruct",
+      "provider": "openai",
+      "title": "3.OpenRouter LLaMA3 8B Instruct $0.07"
+    },
+    {
+      "apiBase": "https://openrouter.ai/api/v1",
+      "model": "deepseek/deepseek-chat",
+      "provider": "openai",
+      "title": "4.OpenRouter Deepseek Chat 236B $0.28"
+    },
+    {
+      "apiBase": "https://openrouter.ai/api/v1",
+      "model": "meta-llama/llama-3-8b-instruct:free",
+      "provider": "openai",
+      "title": "OpenRouter LLaMA3 8B free"
+    },
+    {
+      "apiBase": "https://openrouter.ai/api/v1",
+      "model": "microsoft/phi-3-medium-128k-instruct:free",
+      "provider": "openai",
+      "title": "OpenRouter Phi-3 Medium 14B 128k free"
+    }
+  ],
+  "generalModelsLocal": [
+    {
+      "model": "llama3:8b-instruct-q6_K",
+      "provider": "ollama",
+      "title": "1.Llama 3 q6_K"
+    },
+    {
+      "model": "qwen2:7b-instruct-q6_K",
+      "provider": "ollama",
+      "title": "Qwen2-7B-Instruct"
+    },
+    {
+      "model": "qwen2:1.5b-instruct-q6_K",
+      "provider": "ollama",
+      "title": "Qwen2-1.5B-Instruct"
+    },
+    {
+      "model": "qwen2:0.5b-instruct-q6_K",
+      "provider": "ollama",
+      "title": "Qwen2-0.5B-Instruct"
+    }
+  ],
+  "llamaCppModels": [
+    {
+      "apiBase": "http://localhost:8080",
+      "model": "starcoder-3b",
+      "provider": "llama.cpp",
+      "title": "Llama CPP"
+    },
+    {
+      "apiBase": "http://localhost:8080",
+      "model": "deepseek-coder",
+      "provider": "llama.cpp",
+      "title": "Llama CPP"
+    }
+  ]
+}
