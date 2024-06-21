@@ -57,4 +57,6 @@ You goal is to rewrite the prompts following the principles below.
 - Please use the same language based on the provided paragraph\[/title/text /essay/answer].
 `;
 
+export * from "./work.js";
+
 export { deepThink, promptArchitect };
