@@ -2,9 +2,10 @@
   "name": "my-llm-langchain",
   "version": "1.0.0",
   "description": "My LLM prompts and agent setup using LangChain.js",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsx index.ts"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +15,10 @@
     "cheerio": "^1.0.0-rc.12",
     "langchain": "^0.2.5"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^20.14.7",
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.2"
+  }
 }
