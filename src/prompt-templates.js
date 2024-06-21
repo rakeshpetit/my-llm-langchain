@@ -10,6 +10,10 @@ const shortDescription = ChatPromptTemplate.fromMessages([
   ["user", "Tell me something about {topic} in 50 words"],
 ]);
 
-export { shortDescription };
+const synonyms = ChatPromptTemplate.fromTemplate(
+  "List 5 synonyms for the word {topic} separated by commas. Only return the synonyms and nothing else in the output."
+);
+
+export { shortDescription, synonyms };
 
 export default promptTemplate;
