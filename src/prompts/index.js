@@ -58,5 +58,6 @@ You goal is to rewrite the prompts following the principles below.
 `;
 
 export * from "./work.js";
+export * from "./personal.js";
 
 export { deepThink, promptArchitect };
