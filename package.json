@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsx index.ts",
+    "retrieve-doc": "tsx src/retrieval-chain.ts",
     "dev": "nodemon -w ./index.ts --exec tsx index.ts"
   },
   "author": "",
