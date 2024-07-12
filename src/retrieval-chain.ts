@@ -10,54 +10,62 @@ import * as dotenv from "dotenv";
 import { ollamaLlm } from "./models.js";
 
 dotenv.config();
+// Function to create a retrieval chain from a URL
+async function createRetrievalChainFromUrl(url: string) {
+  // Load documents from the URL
+  const loader = new CheerioWebBaseLoader(url);
+  const docs = await loader.load();
 
-// Create prompt
-const prompt = ChatPromptTemplate.fromTemplate(
-  `Answer the user's question from the following context: 
-  {context}
-  Question: {input}`
-);
+  // Split documents into chunks
+  const splitter = new RecursiveCharacterTextSplitter({
+    chunkSize: 500,
+    chunkOverlap: 50,
+  });
+  const splitDocs = await splitter.splitDocuments(docs);
 
-// Create Chain
-const chain = await createStuffDocumentsChain({
-  llm: ollamaLlm,
-  prompt,
-});
+  // Create embeddings
+  const embeddings = new OllamaEmbeddings({
+    model: "nomic-embed-text:latest",
+  });
 
-// Use Cheerio to scrape content from webpage and create documents
-const loader = new CheerioWebBaseLoader("https://thoughtbot.com/");
-const docs = await loader.load();
+  // Create vector store
+  const vectorstore = await MemoryVectorStore.fromDocuments(
+    splitDocs,
+    embeddings
+  );
 
-// Text Splitter
-const splitter = new RecursiveCharacterTextSplitter({
-  chunkSize: 500,
-  chunkOverlap: 50,
-});
-const splitDocs = await splitter.splitDocuments(docs);
-// console.log(splitDocs);
+  // Create prompt
+  const prompt = ChatPromptTemplate.fromTemplate(
+    `Answer the user's question from the following context: 
+    {context}
+    Question: {input}`
+  );
 
-// Instantiate Embeddings function
-const embeddings = new OllamaEmbeddings({
-  model: "nomic-embed-text:latest",
-});
+  // Create chain
+  const chain = await createStuffDocumentsChain({
+    llm: ollamaLlm,
+    prompt,
+  });
 
-// Create Vector Store
-const vectorstore = await MemoryVectorStore.fromDocuments(
-  splitDocs,
-  embeddings
-);
+  // Create retriever
+  const retriever = vectorstore.asRetriever({ k: 2 });
 
-// Create a retriever from vector store
-const retriever = vectorstore.asRetriever({ k: 2 });
+  // Create retrieval chain
+  return await createRetrievalChain({
+    combineDocsChain: chain,
+    retriever,
+  });
+}
+// Main function to run the retrieval chain
+async function run() {
+  const url = "https://thoughtbot.com/blog/understanding-open-source-llms";
+  const retrievalChain = await createRetrievalChainFromUrl(url);
 
-// Create a retrieval chain
-const retrievalChain = await createRetrievalChain({
-  combineDocsChain: chain,
-  retriever,
-});
+  const response = await retrievalChain.invoke({
+    input: "What does thoughtbot do? Can they help me build a mobile app?",
+  });
 
-const response = await retrievalChain.invoke({
-  input: "What does thoughtbot do? Can they help me build a mobile app?",
-});
+  console.log(response.answer);
+}
 
-console.log(response.answer);
+run();
