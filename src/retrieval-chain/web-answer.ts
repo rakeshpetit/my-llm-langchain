@@ -11,8 +11,7 @@ async function createRetrievalChainFromUrl(url: string) {
 }
 
 // Main function to run the retrieval chain from URL
-async function runFromUrl() {
-  const url = "https://thoughtbot.com/blog/understanding-open-source-llms";
+async function runFromUrl(url: string) {
   const retrievalChain = await createRetrievalChainFromUrl(url);
 
   const response = await retrievalChain.invoke({
@@ -22,4 +21,6 @@ async function runFromUrl() {
   console.log(response.answer);
 }
 
-runFromUrl();
+const url = "https://thoughtbot.com";
+
+runFromUrl(url);
